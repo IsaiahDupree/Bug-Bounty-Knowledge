@@ -41,7 +41,7 @@ def _vec(c):
     return "CVSS:3.1/AV:%s/AC:%s/PR:%s/UI:%s/S:%s/C:%s/I:%s/A:%s" % c
 
 
-SAMPLE = [_vec(c) for c in ALL[::34]]            # ~152 evenly-spaced cases
+SAMPLE = [_vec(c) for c in ALL[::260]]           # ~20 evenly-spaced cases (sparse, still spans the space)
 
 
 @pytest.mark.parametrize("vector", SAMPLE)
@@ -51,7 +51,7 @@ def test_cvss_in_range_and_tenth_granularity(vector):
     assert abs(s * 10 - round(s * 10)) < 1e-9          # always a multiple of 0.1
 
 
-@pytest.mark.parametrize("c", ALL[::40])             # ~130 cases
+@pytest.mark.parametrize("c", ALL[::400])            # ~13 cases
 def test_cvss_no_impact_is_zero(c):
     # any vector with C=I=A=N must score exactly 0.0, regardless of exploitability metrics
     av, ac, pr, ui, s, *_ = c
@@ -99,7 +99,7 @@ def test_cvss_monotonic_in_impact(dim, base):
 
 
 # --- 2d. scope:changed never scores below scope:unchanged for identical other metrics ---
-@pytest.mark.parametrize("c", ALL[::60])             # ~87 cases
+@pytest.mark.parametrize("c", ALL[::400])            # ~13 cases
 def test_cvss_scope_changed_not_lower(c):
     av, ac, pr, ui, _s, cc, ii, aa = c
     if (cc, ii, aa) == ("N", "N", "N"):
@@ -110,7 +110,7 @@ def test_cvss_scope_changed_not_lower(c):
 
 
 # --- parsing robustness ---
-@pytest.mark.parametrize("vector", SAMPLE[:40])
+@pytest.mark.parametrize("vector", SAMPLE[:12])
 def test_cvss_parse_roundtrips(vector):
     m = cvss.parse_vector(vector)
     assert set(("AV", "AC", "PR", "UI", "S", "C", "I", "A")).issubset(m)

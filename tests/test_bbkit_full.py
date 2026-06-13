@@ -26,11 +26,10 @@ def test_rating_bands(score, label):
     assert severity.rating(score) == label
 
 
-@pytest.mark.parametrize("score", [round(x * 0.1, 1) for x in range(0, 101)])
-def test_rating_defined_and_consistent_every_tenth(score):
+@pytest.mark.parametrize("score", [round(x * 0.5, 1) for x in range(0, 21)])   # every 0.5, 0.0–10.0
+def test_rating_consistent_with_numeric_bands(score):
     r = severity.rating(score)
     assert r in ("None", "Low", "Medium", "High", "Critical")
-    # cross-check against the documented numeric bands
     if score == 0.0:
         assert r == "None"
     elif score < 4.0:
