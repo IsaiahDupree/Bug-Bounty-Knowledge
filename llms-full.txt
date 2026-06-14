@@ -1,5 +1,5 @@
 # Bug Bounty Knowledge — full corpus
-# 60 documents concatenated for LLM ingestion. Separator: '# === FILE: <path> ==='
+# 62 documents concatenated for LLM ingestion. Separator: '# === FILE: <path> ==='
 
 
 # === FILE: README.md ===
@@ -1353,6 +1353,64 @@ pytest tests/test_bbkit.py -k jwt_decode_and_alg_none
 ---
 _Score every confirmed finding with `bbkit.cvss` + `bbkit.severity`, write it up with `bbkit.report`._
 
+# === FILE: techniques/Bug Bounty Discovery & Triage.md ===
+
+# Bug Bounty Discovery & Triage Methodology
+
+_How to find work worth doing — the reproducible front of the funnel, distilled from real audit campaigns. For AUTHORIZED testing + responsible disclosure only._
+
+> **North star: expected value per hour, not contests entered.** The single biggest EV lever, found empirically: **fresh time-boxed contests >> picked-over always-on programs.** A fresh Sherlock contest (dreUSD) yielded 2 confirmed Mediums; two mature always-on Immunefi programs in a row (Veda, Enzyme Onyx) yielded honest "hardened, no bug" verdicts — the obvious surfaces were already closed by prior audits. Tune discovery to surface **fresh, time-boxed scope the moment it's announced**, and be skeptical of mega always-on bounties.
+
+A documented "no bug found, here's the disqualifier that killed each class" is a **valid result**. Never manufacture findings or submit weak/known leads — that burns reputation and gets you banned.
+
+---
+
+## 1. Platforms to monitor (and how to read them)
+
+| Platform | Surface | How to read | Fit |
+|---|---|---|---|
+| **Sherlock — Contests** | time-boxed | public JSON API (`/contests`, paginated) | ⭐ primary |
+| **Sherlock — Bug Bounties** | **always-on** (separate surface!) | public JSON API (`/bug_bounties`) | freshly-launched ones are higher EV |
+| **Cantina** | time-boxed | public competitions API | ⭐ primary |
+| **Code4rena** | time-boxed | public audits API (paginated) | ⭐ primary |
+| **Immunefi** | always-on + boosts | public bounties JSON | always-on = low EV; **live competitions aren't in the public JSON** — watch the Competitions tab manually |
+| **Codehawks / HackerOne / Bugcrowd / Intigriti** | mixed | API key / manual | web2 + manual path |
+
+> Two distinct surfaces matter: time-boxed (a deadline) vs always-on (no deadline). A recently-launched **always-on** bounty (tag anything `live_since` < 60 days as **🆕 fresh**) is far less picked-over than a years-old one — rank fresh first. The three competitive-audit platforms (Sherlock + Cantina + Code4rena) are the core: fresh, well-scoped Solidity on a clock.
+
+## 2. The discovery engine (read-only, never joins or submits)
+One scheduled script polls every JSON API, normalizes each open opportunity, ranks it, and diffs against the last run to surface what's **NEW** and **UPCOMING**. Fire OS notifications on genuine signal only:
+- **⏰ UPCOMING** — a contest was *announced*. Highest priority: read scope on day-zero, before the crowd.
+- **🔔 NEW** — a new target appeared since the last run.
+
+## 3. EV triage — the ranking
+```
+ev_score = ($rewards / nSLOC) × time_factor
+```
+- **reward density** (`$rewards / nSLOC`) — reward per line of *in-scope* code = best odds of a paid finding per hour. Where nSLOC is unknown, use a bounded reward proxy.
+- **time_factor** — penalize <2 days left (×0.3), ease 2–5 days (×0.8), full for longer (×1.0), and slightly favor not-yet-started contests (×1.1 — full window ahead).
+
+**Beyond the score, high-EV =** fresh product/first contest · toolchain fit (Solidity/Foundry — skip rig mismatches like Cairo/Rust unless you have the rig) · public repo at a pinned commit (clone & build immediately) · no KYC-to-participate · vault/share-price/accounting shaped (where your playbooks are sharpest).
+
+**Disqualifiers (deprioritize):** mega always-on programs (most picked-over code on the internet) · already in judging/ended · scope you can't build (private repo, exotic chain, no commit pin).
+
+## 4. The full pipeline — and the two human gates
+```
+ discover + triage ──► JOIN contest ──► scaffold rig ──► hunt + PoC ──► SUBMIT
+   ✅ automated         🚫 human          ✅ automated      ⚙️ assisted     🚫 human
+```
+**Join and submit are deliberately manual:**
+- **Join** = signing a wallet tx + accepting a legal rules-of-engagement / safe-harbor. Auto-signing a legal commitment is out of bounds.
+- **Submit** = auto-filing unverified findings is spam → reputation damage + bans. Every program (and a sane policy) rewards verified, PoC-backed, high-signal reports. The human gate is where you choose severity correctly and catch the label/validity mistakes that would invalidate a submission.
+
+## 5. The hunting toolkit (close the loop)
+- **Knowledge MCP** (`kb_search` / `kb_get` / `kb_list` / `kb_index`) — query this Bug-Bounty-Knowledge base (and a trading base) for the target's shape. Start every audit with `kb_search` on the contract pattern. See [knowledge-mcp](https://github.com/IsaiahDupree/knowledge-mcp).
+- **Playbook lenses** — [DeFi Vault & Share-Price Auditing](./DeFi%20Vault%20%26%20Share-Price%20Auditing.md) (the 60-second inflation disqualifier, ranked vault classes, trusted-roles=OOS filter) and [RWA Mint/Redeem Vault Auditing](./RWA%20Mint-Redeem%20Vault%20Auditing.md).
+- **bbkit** — score confirmed findings with `bbkit.cvss` + `bbkit.severity`, write them up with `bbkit.report`.
+
+---
+_The discipline: optimize EV/hour, prefer fresh time-boxed scope, automate everything except the two legal/quality human gates, and treat a well-documented "no finding" as a real, reputation-preserving outcome._
+
 # === FILE: techniques/Business Logic.md ===
 
 # Business Logic
@@ -2346,6 +2404,49 @@ Per-technique references aggregated across the 12-book shelf. Each links every b
 | Url Redirection | 1 | — | [Url Redirection.md](./Url%20Redirection.md) |
 | Weak Cipher | 1 | — | [Weak Cipher.md](./Weak%20Cipher.md) |
 | Web Shells | 1 | — | [Web Shells.md](./Web%20Shells.md) |
+
+# === FILE: techniques/RWA Mint-Redeem Vault Auditing.md ===
+
+# RWA Mint/Redeem Vault Auditing
+
+_Field lens distilled from a real authorized audit (Midas — Sherlock always-on, RWA mint/redeem). Sibling to [DeFi Vault & Share-Price Auditing](./DeFi%20Vault%20%26%20Share-Price%20Auditing.md). For AUTHORIZED testing + responsible disclosure only. This was a **hardened, no-finding** review — the value here is the lens and the disqualifiers, not an exploit._
+
+**Scope shape:** tokenized real-world-asset systems where users `mint` a yield-bearing token against a stablecoin/RWA and `redeem` back, priced by an admin/oracle NAV (mTBILL/mBASIS-style). Maps to ERC-4626-adjacent accounting + oracle + role design.
+
+---
+
+## The 60-second disqualifier (run FIRST — same question as the vault playbook, RWA variant)
+
+> **"Is the redeem/share price derived from a token *balance*, or *pushed* by an admin/oracle?"**
+
+- **Balance-derived** → the inflation / donation / first-depositor class is LIVE (see the vault playbook). Dig here.
+- **Admin/oracle-pushed NAV** → **the entire inflation class is DEAD.** The dreUSD-M2 / Enzyme inflation surface does not apply. In Midas the NAV came from a `CustomAggregatorV3CompatibleFeed` (feed admins post the price; `*Growth` variants add bounded linear interest between rounds), wrapped by a `DataFeed` that enforces Chainlink staleness (`healthyDiff`) + `[minExpectedAnswer, maxExpectedAnswer]` bounds on every read. No user manipulation path → move EV elsewhere.
+
+If NAV is pushed, the inflation lane is closed. Spend your hours on the **flow math**, not the price.
+
+## Where the bugs actually live in mint/redeem RWA (ranked by EV)
+
+1. **Redeem/deposit flow math — instant vs request.** The `amountOut = amountMTokenWithoutFee × mTokenRate / tokenOutRate` (and inverse) is where rounding, fee order, and slippage interact. Check:
+   - **`minReceiveAmount` slippage guard** enforced on the *actually-delivered* amount (not a pre-fee figure).
+   - **Request flow rate-lock:** rates stored at request time, admin approves at a new rate — is the move bounded by a `variationTolerance`? Is the non-`safe` `approveRequest` `onlyAdmin` (trusted = out of scope) vs a `safe*` path that bounds the rate delta?
+   - **Batch approval** that skips under-funded requests (`_validateLiquidity`) without reverting the whole batch — does the skip leak value or double-count limits?
+2. **Integration variants = freshest code = best odds.** `RedemptionVaultWith{Swapper,BUIDL,Aave,Morpho,USTB}` / `DepositVaultWith{...}`. These wrap an external protocol — audit the **external-call assumptions**: slippage, who bears the loss, reentrancy across the external call (is `tokenOut` transfer last?), and conservation at oracle rates. The *Swapper* fallback (swap net mToken1→mToken2 via a trusted LP, redeem through a second vault) is the novel surface: confirm the inner redeem enforces the **same `minReceiveAmount`** so the fallback can't silently deliver below the user's floor.
+3. **Decimal/rounding drain.** Look for a **strict round-trip equality** guard (`require(amount == convertFromBase18(amount).convertToBase18())`, "invalid rounding") — a system that *reverts* rather than silently dropping dust has no rounding-drain surface. Its absence is the bug; its presence is a closed lane.
+4. **Stablecoin 1:1 shortcuts.** A hardcoded `STABLECOIN_RATE = 1e18` is only safe if the code *still* calls the feed health + min/max peg check first (reverts on a hard depeg out of bounds) before returning 1:1. A 1:1 that skips the feed entirely is a depeg-mispricing finding.
+5. **Limits & allowances.** Daily instant limit + per-token allowance (`MAX_UINT` = unlimited) + greenlist/blacklist/sanctions gating — check the *update* order vs the transfer (TOCTOU), and whether gross vs net is limited consistently.
+
+## What "good" looks like (if you see ALL of these, the core is likely clean — bank it as no-finding)
+- NAV is admin/oracle-pushed with staleness + min/max bounds and `onlyUp`/`maxAnswerDeviation` on writes.
+- Mint/burn is role-gated to the vaults; token is pausable + blacklist-gated on transfer.
+- Fee is floor-division, capped at 100%, waived-accounts → 0; conversion reverts on rounding mismatch.
+- Request flows lock rates and bound the admin re-price by a tolerance; `tokenOut` transfer is last.
+- Swapper/integration fallbacks propagate the user's `minReceiveAmount` and round in the user's favor.
+
+## The trusted-roles = out-of-scope filter (carry over from the vault playbook)
+Almost every "admin can set a bad rate / drain via privileged call" lead is **out of scope** — competitive-audit rules treat trusted roles as trusted. Before writing a finding on an `onlyAdmin` path, confirm the program's in-scope-roles list. The EV is in **permissionless** user-reachable paths only.
+
+---
+_Hardened-no-finding is a valid, reputation-preserving result. Score any confirmed finding with `bbkit.cvss` + `bbkit.severity` and write it up with `bbkit.report`._
 
 # === FILE: techniques/Recon & Enumeration.md ===
 

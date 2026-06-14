@@ -25,6 +25,7 @@ Machine-readable index of this knowledge base. Each entry: title — summary (pa
 ## techniques
 - [Advanced Persistent Threats (Apt)](techniques/Advanced Persistent Threats (Apt).md) — _Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
 - [Authentication & Session](techniques/Authentication & Session.md) — _Aggregated from **4** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
+- [Bug Bounty Discovery & Triage Methodology](techniques/Bug Bounty Discovery & Triage.md) — _How to find work worth doing — the reproducible front of the funnel, distilled from real audit campaigns. For AUTHORIZED testing + responsible disclosure only.
 - [Business Logic](techniques/Business Logic.md) — _Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
 - [CORS Misconfiguration](techniques/CORS Misconfiguration.md) — _Aggregated from **2** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
 - [CSRF](techniques/CSRF.md) — _Aggregated from **6** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
@@ -55,6 +56,7 @@ Machine-readable index of this knowledge base. Each entry: title — summary (pa
 - [Phishing Via Man-In-The-Middle (Mitm)](techniques/Phishing Via Man-In-The-Middle (Mitm).md) — _Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
 - [Physical Bypass Techniques](techniques/Physical Bypass Techniques.md) — _Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
 - [Techniques](techniques/README.md) — Per-technique references aggregated across the 12-book shelf. Each links every book that describes the vulnerability class and, where built, its bbkit helper + 
+- [RWA Mint/Redeem Vault Auditing](techniques/RWA Mint-Redeem Vault Auditing.md) — _Field lens distilled from a real authorized audit (Midas — Sherlock always-on, RWA mint/redeem). Sibling to [DeFi Vault & Share-Price Auditing](./DeFi%20Vault%
 - [Recon & Enumeration](techniques/Recon & Enumeration.md) — _Aggregated from **4** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
 - [Reporting & Disclosure](techniques/Reporting & Disclosure.md) — _Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d
 - [Rfid Badge Cloning](techniques/Rfid Badge Cloning.md) — _Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d

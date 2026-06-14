@@ -8,7 +8,7 @@
     "full_corpus_gz": "llms-full.txt.gz",
     "manifest": "manifest.json"
   },
-  "document_count": 60,
+  "document_count": 62,
   "documents": [
     {
       "path": "README.md",
@@ -121,6 +121,13 @@
       "summary": "_Aggregated from **4** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
       "folder": "techniques",
       "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Authentication & Session.md"
+    },
+    {
+      "path": "techniques/Bug Bounty Discovery & Triage.md",
+      "title": "Bug Bounty Discovery & Triage Methodology",
+      "summary": "_How to find work worth doing \u2014 the reproducible front of the funnel, distilled from real audit campaigns. For AUTHORIZED testing + responsible disclosure only.",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Bug Bounty Discovery & Triage.md"
     },
     {
       "path": "techniques/Business Logic.md",
@@ -331,6 +338,13 @@
       "summary": "Per-technique references aggregated across the 12-book shelf. Each links every book that describes the vulnerability class and, where built, its bbkit helper + ",
       "folder": "techniques",
       "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/README.md"
+    },
+    {
+      "path": "techniques/RWA Mint-Redeem Vault Auditing.md",
+      "title": "RWA Mint/Redeem Vault Auditing",
+      "summary": "_Field lens distilled from a real authorized audit (Midas \u2014 Sherlock always-on, RWA mint/redeem). Sibling to [DeFi Vault & Share-Price Auditing](./DeFi%20Vault%",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/RWA Mint-Redeem Vault Auditing.md"
     },
     {
       "path": "techniques/Recon & Enumeration.md",
