@@ -77,9 +77,9 @@ def main() -> int:
     if not notes:
         print("no books/*.md — run run_all.py first")
         return 1
-    if OUT.exists():
-        shutil.rmtree(OUT)
     OUT.mkdir(parents=True, exist_ok=True)
+    # Preserve hand-authored docs (e.g. curated playbooks): only generator-produced docs carry the
+    # GEN_MARK. We remove stale generated docs at the end, never the authored ones.
 
     agg = {}
     for p in notes:
@@ -108,6 +108,18 @@ def main() -> int:
         (OUT / (safe_name(tech) + ".md")).write_text("\n".join(lines), encoding="utf-8")
         rows.append((tech, len(books), bool(code), safe_name(tech) + ".md"))
 
+    # remove STALE generated docs (carry the GEN_MARK but no longer produced); keep authored docs
+    GEN_MARK = "## How the shelf describes it"
+    produced = {fname for _, _, _, fname in rows} | {"README.md"}
+    preserved = []
+    for existing in OUT.glob("*.md"):
+        if existing.name in produced:
+            continue
+        if GEN_MARK in existing.read_text(errors="ignore"):
+            existing.unlink()                       # stale generated doc
+        else:
+            preserved.append(existing.name)         # hand-authored — keep
+
     rows.sort(key=lambda r: -r[1])
     idx = ["# Techniques", "",
            f"Per-technique references aggregated across the {len(notes)}-book shelf. Each links every "
@@ -118,7 +130,8 @@ def main() -> int:
     (OUT / "README.md").write_text("\n".join(idx), encoding="utf-8")
 
     coded = sum(1 for r in rows if r[2])
-    print(f"techniques/ → {len(rows)} technique docs ({coded} linked to code), 1 README")
+    extra = f" + {len(preserved)} authored preserved" if preserved else ""
+    print(f"techniques/ → {len(rows)} technique docs ({coded} linked to code), 1 README{extra}")
     return 0
 
 
