@@ -8,7 +8,7 @@
     "full_corpus_gz": "llms-full.txt.gz",
     "manifest": "manifest.json"
   },
-  "document_count": 59,
+  "document_count": 60,
   "documents": [
     {
       "path": "README.md",
@@ -205,6 +205,13 @@
       "summary": "_Aggregated from **8** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
       "folder": "techniques",
       "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Cross-Site Scripting (XSS).md"
+    },
+    {
+      "path": "techniques/DeFi Vault & Share-Price Auditing.md",
+      "title": "DeFi Vault & Share-Price Auditing",
+      "summary": "_Field playbook distilled from real authorized audits on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf: Polymarket V2 (",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/DeFi Vault & Share-Price Auditing.md"
     },
     {
       "path": "techniques/Denial Of Service (Dos) Distributed Denial Of Service (Ddos).md",
