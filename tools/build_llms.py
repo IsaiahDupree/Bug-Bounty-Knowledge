@@ -6,6 +6,9 @@ Emits, at the repo root:
                        + relative path, grouped by folder. Small; for an agent to pick what to read.
   • llms-full.txt   — the ENTIRE corpus concatenated into one file (clear `# === FILE: path ===`
                        separators) for single-shot ingestion / RAG chunking.
+  • manifest.json   — machine-readable catalog: per-doc {path, title, summary, folder, raw_url} +
+                       entrypoints + repo metadata, so an agent can parse, filter, and fetch exact
+                       raw URLs without scraping markdown.
   • llms.txt.gz, llms-full.txt.gz — gzip counterparts (≈3-5x smaller; same content).
 
 Repo-agnostic: walks whichever doc folders exist (books/, strategies/, techniques/, code-strategies/)
@@ -17,14 +20,34 @@ from __future__ import annotations
 
 import glob
 import gzip
+import json
 import os
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 # doc folders in preferred reading order; only those that exist are used
 FOLDERS = ["", "books", "strategies", "techniques", "code-strategies"]
 TOP_FILES = ["README.md", "INDEX.md"]
+
+
+def _raw_base() -> str:
+    """`https://raw.githubusercontent.com/<owner>/<repo>/<branch>/` from the git remote, or '' if none."""
+    def _git(*a):
+        try:
+            return subprocess.check_output(["git", "-C", str(ROOT), *a],
+                                           stderr=subprocess.DEVNULL).decode().strip()
+        except Exception:
+            return ""
+    url = _git("config", "--get", "remote.origin.url")
+    if not url:
+        return ""
+    m = re.search(r"github\.com[:/]+([^/]+)/(.+?)(?:\.git)?$", url)
+    if not m:
+        return ""
+    branch = _git("rev-parse", "--abbrev-ref", "HEAD") or "main"
+    return f"https://raw.githubusercontent.com/{m.group(1)}/{m.group(2)}/{branch}/"
 
 
 def _title_and_summary(text: str):
@@ -98,10 +121,38 @@ def main() -> int:
         with gzip.open(ROOT / (fname + ".gz"), "wb") as fh:
             fh.write(data)
 
+    # --- manifest.json (machine-readable catalog) ---
+    raw_base = _raw_base()
+    documents = []
+    for rel, text in docs:
+        t, s = _title_and_summary(text)
+        documents.append({
+            "path": rel,
+            "title": t or rel,
+            "summary": s,
+            "folder": os.path.dirname(rel) or "(root)",
+            "raw_url": (raw_base + rel.replace(os.sep, "/")) if raw_base else None,
+        })
+    manifest = {
+        "name": repo_title,
+        "description": repo_summary,
+        "raw_base": raw_base or None,
+        "entrypoints": {
+            "index": "llms.txt",
+            "full_corpus": "llms-full.txt",
+            "full_corpus_gz": "llms-full.txt.gz",
+            "manifest": "manifest.json",
+        },
+        "document_count": len(documents),
+        "documents": documents,
+    }
+    (ROOT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+
     full_kb = len(full.encode()) / 1024
     gz_kb = (ROOT / "llms-full.txt.gz").stat().st_size / 1024
-    print(f"llms.txt ({len(docs)} docs indexed) + llms-full.txt ({full_kb:.0f}KB → "
-          f"{gz_kb:.0f}KB gz, {full_kb/gz_kb:.1f}x) + .gz counterparts")
+    print(f"llms.txt ({len(docs)} docs) + llms-full.txt ({full_kb:.0f}KB → {gz_kb:.0f}KB gz, "
+          f"{full_kb/gz_kb:.1f}x) + manifest.json ({len(documents)} docs, "
+          f"raw_url={'yes' if raw_base else 'none'}) + .gz")
     return 0
 
 

@@ -1,0 +1,427 @@
+{
+  "name": "Bug Bounty Knowledge",
+  "description": "AI-extracted **technique references** from a shelf of bug-bounty / web-security books \u2014 a structured,",
+  "raw_base": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/",
+  "entrypoints": {
+    "index": "llms.txt",
+    "full_corpus": "llms-full.txt",
+    "full_corpus_gz": "llms-full.txt.gz",
+    "manifest": "manifest.json"
+  },
+  "document_count": 59,
+  "documents": [
+    {
+      "path": "README.md",
+      "title": "Bug Bounty Knowledge",
+      "summary": "AI-extracted **technique references** from a shelf of bug-bounty / web-security books \u2014 a structured,",
+      "folder": "(root)",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/README.md"
+    },
+    {
+      "path": "INDEX.md",
+      "title": "Bug Bounty Knowledge \u2014 Index",
+      "summary": "AI-extracted technique references from **12 bug-bounty / web-security books** (model `gpt-4o-mini`). For AUTHORIZED testing + responsible disclosure. Each links",
+      "folder": "(root)",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/INDEX.md"
+    },
+    {
+      "path": "books/a-bug-bounty-hunting-journey-0fed.md",
+      "title": "A bug bounty hunting journey",
+      "summary": "\"A Bug Bounty Hunting Journey\" provides insights into the world of ethical hacking through bug bounty programs, focusing on the methodologies and techniques use",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/a-bug-bounty-hunting-journey-0fed.md"
+    },
+    {
+      "path": "books/bug-bounty-decoded-unraveling-the-mysteries-of-eth-4a75.md",
+      "title": "Bug Bounty Decoded Unraveling the Mysteries of Ethical Hacking Rewards",
+      "summary": "\"Bug Bounty Decoded\" provides insights into the world of ethical hacking and bug bounty programs, highlighting vulnerability classes, techniques, and effective ",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/bug-bounty-decoded-unraveling-the-mysteries-of-eth-4a75.md"
+    },
+    {
+      "path": "books/bug-bounty-field-manual-b80e.md",
+      "title": "Bug Bounty Field Manual",
+      "summary": "The \"Bug Bounty Field Manual\" provides a comprehensive guide for security researchers engaged in bug bounty programs. It focuses on practical techniques for ide",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/bug-bounty-field-manual-b80e.md"
+    },
+    {
+      "path": "books/bug-bounty-from-scratch-a-comprehensive-guide-to-d-2db4.md",
+      "title": "Bug Bounty from Scratch A comprehensive guide to discovering vulnerabilities and succeeding in c...",
+      "summary": "\"Bug Bounty from Scratch\" serves as a comprehensive guide for discovering vulnerabilities and succeeding in the bug bounty ecosystem. The book emphasizes practi",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/bug-bounty-from-scratch-a-comprehensive-guide-to-d-2db4.md"
+    },
+    {
+      "path": "books/bug-bounty-hunting-for-web-security-find-and-explo-16f6.md",
+      "title": "Bug Bounty Hunting For Web Security Find And Exploit Vulnerabilities In Web Sites And Applications",
+      "summary": "This book provides a comprehensive guide on identifying and exploiting vulnerabilities in web applications, aiming to equip bug bounty hunters with effective te",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/bug-bounty-hunting-for-web-security-find-and-explo-16f6.md"
+    },
+    {
+      "path": "books/bug-bounty-playbook-v1-5b36.md",
+      "title": "Bug Bounty Playbook v1",
+      "summary": "The \"Bug Bounty Playbook v1\" serves as a comprehensive guide for bounty hunters, detailing various techniques to identify vulnerabilities across diverse technol",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/bug-bounty-playbook-v1-5b36.md"
+    },
+    {
+      "path": "books/corporate-cybersecurity-identifying-risks-and-the-2001.md",
+      "title": "Corporate Cybersecurity Identifying Risks and the Bug Bounty Program",
+      "summary": "\"Corporate Cybersecurity Identifying Risks and the Bug Bounty Program\" provides a comprehensive approach to identifying and mitigating various cybersecurity ris",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/corporate-cybersecurity-identifying-risks-and-the-2001.md"
+    },
+    {
+      "path": "books/enumerating-esoteric-attack-surfaces-recon-for-bug-69e2.md",
+      "title": "Enumerating Esoteric Attack Surfaces Recon for Bug Bounty Hunters, Penetration Testers and OSINT Aggressors",
+      "summary": "\"Enumerating Esoteric Attack Surfaces Recon for Bug Bounty Hunters, Penetration Testers and OSINT Aggressors\" focuses on the exploration and identification of l",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/enumerating-esoteric-attack-surfaces-recon-for-bug-69e2.md"
+    },
+    {
+      "path": "books/journal-of-database-management-2020-jan-vol-31-iss-6658.md",
+      "title": "[Journal of Database Management 2020-jan vol. 31 iss. 1] Bug Bounty Marketplaces and Enabling Responsible Vulnerability Disclosure{Subramanian, Hemang Chamakuzhi_ Malladi, Suresh}(2020 January)[10.4018_JDM.2020010103]{85229289} libgen.li",
+      "summary": "This journal article explores the dynamics of bug bounty marketplaces, focusing on how they enable responsible vulnerability disclosure. The authors discuss the",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/journal-of-database-management-2020-jan-vol-31-iss-6658.md"
+    },
+    {
+      "path": "books/my-first-bug-bounty-08c6.md",
+      "title": "My First Bug Bounty",
+      "summary": "\"My First Bug Bounty\" serves as a practical guide for beginners entering the field of security research and bug hunting. It emphasizes understanding various vul",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/my-first-bug-bounty-08c6.md"
+    },
+    {
+      "path": "books/redefining-hacking-a-comprehensive-guide-to-red-te-adc6.md",
+      "title": "Redefining Hacking A Comprehensive Guide to Red Teaming and Bug Bounty Hunting in an AI-driven World",
+      "summary": "This book provides an extensive exploration of red teaming and bug bounty hunting, emphasizing modern attack techniques, methodologies, and tools in an increasi",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/redefining-hacking-a-comprehensive-guide-to-red-te-adc6.md"
+    },
+    {
+      "path": "books/the-secret-of-bug-hunting-bug-bounty-automation-wi-80f0.md",
+      "title": "The secret of bug hunting. Bug bounty automation with python",
+      "summary": "This book provides insights into bug bounty hunting with a focus on leveraging Python for automation. It covers a range of techniques, methodologies, and tools ",
+      "folder": "books",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/books/the-secret-of-bug-hunting-bug-bounty-automation-wi-80f0.md"
+    },
+    {
+      "path": "techniques/Advanced Persistent Threats (Apt).md",
+      "title": "Advanced Persistent Threats (Apt)",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Advanced Persistent Threats (Apt).md"
+    },
+    {
+      "path": "techniques/Authentication & Session.md",
+      "title": "Authentication & Session",
+      "summary": "_Aggregated from **4** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Authentication & Session.md"
+    },
+    {
+      "path": "techniques/Business Logic.md",
+      "title": "Business Logic",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Business Logic.md"
+    },
+    {
+      "path": "techniques/CORS Misconfiguration.md",
+      "title": "CORS Misconfiguration",
+      "summary": "_Aggregated from **2** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/CORS Misconfiguration.md"
+    },
+    {
+      "path": "techniques/CSRF.md",
+      "title": "CSRF",
+      "summary": "_Aggregated from **6** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/CSRF.md"
+    },
+    {
+      "path": "techniques/Certificate Transparency Monitoring.md",
+      "title": "Certificate Transparency Monitoring",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Certificate Transparency Monitoring.md"
+    },
+    {
+      "path": "techniques/Clickjacking.md",
+      "title": "Clickjacking",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Clickjacking.md"
+    },
+    {
+      "path": "techniques/Code Injection Attacks.md",
+      "title": "Code Injection Attacks",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Code Injection Attacks.md"
+    },
+    {
+      "path": "techniques/Command And Control (C2) Channels.md",
+      "title": "Command And Control (C2) Channels",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Command And Control (C2) Channels.md"
+    },
+    {
+      "path": "techniques/Command Injection RCE.md",
+      "title": "Command Injection / RCE",
+      "summary": "_Aggregated from **2** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Command Injection RCE.md"
+    },
+    {
+      "path": "techniques/Content Security Policy (Csp) Misconfigurations.md",
+      "title": "Content Security Policy (Csp) Misconfigurations",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Content Security Policy (Csp) Misconfigurations.md"
+    },
+    {
+      "path": "techniques/Content Security Policy Not Implemented.md",
+      "title": "Content Security Policy Not Implemented",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Content Security Policy Not Implemented.md"
+    },
+    {
+      "path": "techniques/Crlf Injection.md",
+      "title": "Crlf Injection",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Crlf Injection.md"
+    },
+    {
+      "path": "techniques/Cross-Site Scripting (XSS).md",
+      "title": "Cross-Site Scripting (XSS)",
+      "summary": "_Aggregated from **8** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Cross-Site Scripting (XSS).md"
+    },
+    {
+      "path": "techniques/Denial Of Service (Dos) Distributed Denial Of Service (Ddos).md",
+      "title": "Denial Of Service (Dos) / Distributed Denial Of Service (Ddos)",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Denial Of Service (Dos) Distributed Denial Of Service (Ddos).md"
+    },
+    {
+      "path": "techniques/Dns Misconfiguration.md",
+      "title": "Dns Misconfiguration",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Dns Misconfiguration.md"
+    },
+    {
+      "path": "techniques/Dorks.md",
+      "title": "Dorks",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Dorks.md"
+    },
+    {
+      "path": "techniques/File Upload.md",
+      "title": "File Upload",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/File Upload.md"
+    },
+    {
+      "path": "techniques/Header Injection.md",
+      "title": "Header Injection",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Header Injection.md"
+    },
+    {
+      "path": "techniques/Html Injection.md",
+      "title": "Html Injection",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Html Injection.md"
+    },
+    {
+      "path": "techniques/IDOR Broken Access Control.md",
+      "title": "IDOR / Broken Access Control",
+      "summary": "_Aggregated from **3** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/IDOR Broken Access Control.md"
+    },
+    {
+      "path": "techniques/Information Disclosure.md",
+      "title": "Information Disclosure",
+      "summary": "_Aggregated from **3** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Information Disclosure.md"
+    },
+    {
+      "path": "techniques/Misconfigured Jenkins Instances.md",
+      "title": "Misconfigured Jenkins Instances",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Misconfigured Jenkins Instances.md"
+    },
+    {
+      "path": "techniques/Misconfigured Storage Buckets.md",
+      "title": "Misconfigured Storage Buckets",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Misconfigured Storage Buckets.md"
+    },
+    {
+      "path": "techniques/Missing Security Headers.md",
+      "title": "Missing Security Headers",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Missing Security Headers.md"
+    },
+    {
+      "path": "techniques/Open Ports Services.md",
+      "title": "Open Ports/Services",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Open Ports Services.md"
+    },
+    {
+      "path": "techniques/Open Redirect.md",
+      "title": "Open Redirect",
+      "summary": "_Aggregated from **2** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Open Redirect.md"
+    },
+    {
+      "path": "techniques/Path Traversal LFI.md",
+      "title": "Path Traversal / LFI",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Path Traversal LFI.md"
+    },
+    {
+      "path": "techniques/Phishing Via Man-In-The-Middle (Mitm).md",
+      "title": "Phishing Via Man-In-The-Middle (Mitm)",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Phishing Via Man-In-The-Middle (Mitm).md"
+    },
+    {
+      "path": "techniques/Physical Bypass Techniques.md",
+      "title": "Physical Bypass Techniques",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Physical Bypass Techniques.md"
+    },
+    {
+      "path": "techniques/README.md",
+      "title": "Techniques",
+      "summary": "Per-technique references aggregated across the 12-book shelf. Each links every book that describes the vulnerability class and, where built, its bbkit helper + ",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/README.md"
+    },
+    {
+      "path": "techniques/Recon & Enumeration.md",
+      "title": "Recon & Enumeration",
+      "summary": "_Aggregated from **4** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Recon & Enumeration.md"
+    },
+    {
+      "path": "techniques/Reporting & Disclosure.md",
+      "title": "Reporting & Disclosure",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Reporting & Disclosure.md"
+    },
+    {
+      "path": "techniques/Rfid Badge Cloning.md",
+      "title": "Rfid Badge Cloning",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Rfid Badge Cloning.md"
+    },
+    {
+      "path": "techniques/SQL Injection.md",
+      "title": "SQL Injection",
+      "summary": "_Aggregated from **8** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/SQL Injection.md"
+    },
+    {
+      "path": "techniques/SSTI.md",
+      "title": "SSTI",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/SSTI.md"
+    },
+    {
+      "path": "techniques/Security Misconfigurations.md",
+      "title": "Security Misconfigurations",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Security Misconfigurations.md"
+    },
+    {
+      "path": "techniques/Server-Side Request Forgery (SSRF).md",
+      "title": "Server-Side Request Forgery (SSRF)",
+      "summary": "_Aggregated from **3** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Server-Side Request Forgery (SSRF).md"
+    },
+    {
+      "path": "techniques/Sms Spamming.md",
+      "title": "Sms Spamming",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Sms Spamming.md"
+    },
+    {
+      "path": "techniques/Social Engineering Attacks.md",
+      "title": "Social Engineering Attacks",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Social Engineering Attacks.md"
+    },
+    {
+      "path": "techniques/Unauthenticated Api Access.md",
+      "title": "Unauthenticated Api Access",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Unauthenticated Api Access.md"
+    },
+    {
+      "path": "techniques/Url Redirection.md",
+      "title": "Url Redirection",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Url Redirection.md"
+    },
+    {
+      "path": "techniques/Weak Cipher.md",
+      "title": "Weak Cipher",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Weak Cipher.md"
+    },
+    {
+      "path": "techniques/Web Shells.md",
+      "title": "Web Shells",
+      "summary": "_Aggregated from **1** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/Web Shells.md"
+    },
+    {
+      "path": "techniques/XXE.md",
+      "title": "XXE",
+      "summary": "_Aggregated from **2** book(s) on the [Bug-Bounty-Knowledge](https://github.com/IsaiahDupree/Bug-Bounty-Knowledge) shelf. For AUTHORIZED testing + responsible d",
+      "folder": "techniques",
+      "raw_url": "https://raw.githubusercontent.com/IsaiahDupree/Bug-Bounty-Knowledge/main/techniques/XXE.md"
+    }
+  ]
+}
